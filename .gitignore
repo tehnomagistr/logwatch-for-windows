@@ -1,0 +1,25 @@
+# PyInstaller & build artifacts
+build/
+dist/
+*.spec
+*.exe
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Local configs, logs & generated test reports
+logwatch.json
+*.log
+logwatch-report.html
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.ps1
