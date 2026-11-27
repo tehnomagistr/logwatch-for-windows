@@ -36,21 +36,22 @@ A lightweight, standalone daily monitoring and log reporting utility for Windows
 
 ## Quick Start & Deployment Layout
 
-1. Place `logwatch.exe` in a dedicated directory on your server (e.g., `C:\Program Files\Logwatch\`):
+1. Download the precompiled **`logwatch-win-x64.exe`** from the [Releases](https://github.com) page (or build it from source using the instructions below), rename it to **`logwatch.exe`**, and place it in a dedicated directory on your server (e.g., `C:\Program Files\Logwatch\`):
+2. Place `logwatch.exe` in a dedicated directory on your server (e.g., `C:\Program Files\Logwatch\`):
    ```text
    C:\Program Files\Logwatch\
    ├── logwatch.exe          # Standalone executable (from dist/)
    ├── logwatch.json         # Auto-generated on first run next to the exe
    └── logwatch.log          # Created only if "enable_log": true
    ```
-2. Run `logwatch.exe` once without a config file — it will automatically generate a default `logwatch.json` template next to the executable and exit.
-3. Edit `logwatch.json` with your SMTP server and recipient addresses.
-4. Test locally without sending an email:
+3. Run `logwatch.exe` once without a config file — it will automatically generate a default `logwatch.json` template next to the executable and exit.
+4. Edit `logwatch.json` with your SMTP server and recipient addresses.
+5. Test locally without sending an email:
    ```cmd
    logwatch.exe --test
    ```
    This creates `logwatch-report.html` in the same folder.
-5. Schedule daily execution via Windows Task Scheduler (running as `SYSTEM` to access the `Security` event log):
+6. Schedule daily execution via Windows Task Scheduler (running as `SYSTEM` to access the `Security` event log):
    ```cmd
    schtasks /create /tn "Logwatch Daily Report" /tr "\"C:\Program Files\Logwatch\logwatch.exe\"" /sc daily /st 08:00 /ru "NT AUTHORITY\SYSTEM" /rl HIGHEST /f
    ```
@@ -181,20 +182,21 @@ The resulting standalone binary is created at **`dist/logwatch.exe`**.
 
 ## Быстрый старт и структура файлов на сервере
 
-1. Скопируйте `logwatch.exe` в рабочую папку на сервере (например, `C:\Program Files\Logwatch\`):
+1. Скачайте готовый **`logwatch-win-x64.exe`** со страницы [Releases](https://github.com) (или соберите его самостоятельно по инструкции ниже), переименуйте в **`logwatch.exe`** и скопируйте в рабочую папку на сервере (например, `C:\Program Files\Logwatch\`):
+2. Скопируйте `logwatch.exe` в рабочую папку на сервере (например, `C:\Program Files\Logwatch\`):
    ```text
    C:\Program Files\Logwatch\
    ├── logwatch.exe          # Исполняемый файл (из папки dist/)
    ├── logwatch.json         # Создаётся автоматически при первом запуске (рядом с exe)
    └── logwatch.log          # Создаётся только если в конфиге включено "enable_log": true
    ```
-2. Запустите `logwatch.exe` первый раз — программа сама создаст шаблон `logwatch.json` с настройками по умолчанию и завершит работу.
-3. Укажите адрес SMTP-сервера и получателей в `logwatch.json`.
-4. Для локальной проверки без отправки почты выполните:
+3. Запустите `logwatch.exe` первый раз — программа сама создаст шаблон `logwatch.json` с настройками по умолчанию и завершит работу.
+4. Укажите адрес SMTP-сервера и получателей в `logwatch.json`.
+5. Для локальной проверки без отправки почты выполните:
    ```cmd
    logwatch.exe --test
    ```
-5. Зарегистрируйте ежедневную задачу в Планировщике Windows (от имени `SYSTEM` для доступа к журналу `Security`):
+6. Зарегистрируйте ежедневную задачу в Планировщике Windows (от имени `SYSTEM` для доступа к журналу `Security`):
    ```cmd
    schtasks /create /tn "Logwatch Daily Report" /tr "\"C:\Program Files\Logwatch\logwatch.exe\"" /sc daily /st 08:00 /ru "NT AUTHORITY\SYSTEM" /rl HIGHEST /f
    ```
