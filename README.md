@@ -36,7 +36,7 @@ A lightweight, standalone daily monitoring and log reporting utility for Windows
 
 ## Quick Start & Deployment Layout
 
-1. Download the precompiled **`logwatch-win-x64.exe`** from the [Releases](https://github.com) page (or build it from source using the instructions below), rename it to **`logwatch.exe`**, and place it in a dedicated directory on your server (e.g., `C:\Program Files\Logwatch\`):
+1. Download the precompiled **`logwatch-win-x64.exe`** from the [Releases](https://github.com/tehnomagistr/logwatch-for-windows/releases) page (or build it from source using the instructions below), rename it to **`logwatch.exe`**, and place it in a dedicated directory on your server (e.g., `C:\Program Files\Logwatch\`):
 2. Place `logwatch.exe` in a dedicated directory on your server (e.g., `C:\Program Files\Logwatch\`):
    ```text
    C:\Program Files\Logwatch\
@@ -182,7 +182,7 @@ The resulting standalone binary is created at **`dist/logwatch.exe`**.
 
 ## Быстрый старт и структура файлов на сервере
 
-1. Скачайте готовый **`logwatch-win-x64.exe`** со страницы [Releases](https://github.com) (или соберите его самостоятельно по инструкции ниже), переименуйте в **`logwatch.exe`** и скопируйте в рабочую папку на сервере (например, `C:\Program Files\Logwatch\`):
+1. Скачайте готовый **`logwatch-win-x64.exe`** со страницы [Releases](https://github.com/tehnomagistr/logwatch-for-windows/releases) (или соберите его самостоятельно по инструкции ниже), переименуйте в **`logwatch.exe`** и скопируйте в рабочую папку на сервере (например, `C:\Program Files\Logwatch\`):
 2. Скопируйте `logwatch.exe` в рабочую папку на сервере (например, `C:\Program Files\Logwatch\`):
    ```text
    C:\Program Files\Logwatch\
